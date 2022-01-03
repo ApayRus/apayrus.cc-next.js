@@ -16,20 +16,20 @@ export default function Home() {
 				<Logo />
 				<h1 className={styles.title}>ApayRus.CC</h1>
 				<div className={styles.description}>
-					<p>Creative coding</p>
-					<p>Content creating</p>
+					<p>Creative Coding</p>
+					<p>Content Creating</p>
 				</div>
 
-				<div>
+				<div className={styles.about}>
 					<h2>About me</h2>
 					<p>
 						Hi! My name is Rustam Apay, I am:
 						<ul>
-							<li>Full Stack Software Engineer. </li>
-							<li>Open Source Minded.</li>
-							<li>Graduate Mathematician.</li>
-							<li>Aspired Startuper.</li>
-							<li>Dedicated Freelancer.</li>
+							<li>Full Stack Software Engineer </li>
+							<li>Graduate Mathematician</li>
+							<li>Dedicated Freelancer</li>
+							<li>Open Source Minded</li>
+							<li>Aspired Startuper</li>
 						</ul>
 					</p>
 				</div>

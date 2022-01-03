@@ -13,7 +13,20 @@ export default function Home() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>ApayRus.CC</h1>
-
+				<div
+					style={{
+						display: 'inline-block',
+						border: '1px solid red',
+						transform: 'rotate(90deg)',
+						marginTop: 100,
+						fontSize: 50,
+						padding: 20
+					}}
+				>
+					<div style={{ marginBottom: -20 }}>APAYRUS</div>
+					{/* <div>pa</div> */}
+					<div style={{ color: 'grey', transform: 'rotateX(180deg)' }}>APAYRUS</div>
+				</div>
 				<div className={styles.description}>
 					<p>Creative coding</p>
 					<p>Content creating</p>

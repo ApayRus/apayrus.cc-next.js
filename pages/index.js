@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import DomainLogo from '../components/DomainLogo'
+import Logo from '../components/Logo'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,21 +13,14 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>ApayRus.CC</h1>
-				<div
-					style={{
-						display: 'inline-block',
-						border: '1px solid red',
-						transform: 'rotate(90deg)',
-						marginTop: 100,
-						fontSize: 50,
-						padding: 20
-					}}
-				>
-					<div style={{ marginBottom: -20 }}>APAYRUS</div>
-					{/* <div>pa</div> */}
-					<div style={{ color: 'grey', transform: 'rotateX(180deg)' }}>APAYRUS</div>
-				</div>
+				<h1 className={styles.title}>
+					<Logo />
+					<div>
+						<div>Apay</div>
+						<div>Rus</div>
+					</div>
+					<DomainLogo />
+				</h1>
 				<div className={styles.description}>
 					<p>Creative coding</p>
 					<p>Content creating</p>

@@ -1,5 +1,5 @@
 .container {
-	padding: 0 2rem;
+	padding: 10px 2rem;
 }
 
 .main {
@@ -15,26 +15,11 @@
 .logo {
 	display: flex;
 	flex-direction: column;
-	font-size: 5.5rem;
+	align-items: center;
+	font-size: 3rem;
+	border: 4px solid #0047ab;
 	color: #0047ab;
-	margin-right: 20px;
-	margin-left: 20px;
-}
-
-.footer {
-	display: flex;
-	flex: 1;
-	padding: 2rem 0;
-	border-top: 1px solid #eaeaea;
-	justify-content: center;
-	align-items: center;
-}
-
-.footer a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
+	padding: 0 10px;
 }
 
 .title a {
@@ -49,11 +34,13 @@
 }
 
 .title {
-	margin: 0;
+	margin: 0.5em;
 	line-height: 1.15;
-	font-size: 4rem;
+	font-size: 3rem;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
 .title,
@@ -70,4 +57,20 @@
 
 .description p {
 	margin: 0.67rem;
+}
+
+.footer {
+	display: flex;
+	flex: 1;
+	padding: 2rem 0;
+	border-top: 1px solid #eaeaea;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
 }

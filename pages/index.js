@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import DomainLogo from '../components/DomainLogo'
 import Logo from '../components/Logo'
 import styles from '../styles/Home.module.css'
 
@@ -9,18 +8,13 @@ export default function Home() {
 			<Head>
 				<title>ApayRus.CC - creative coding</title>
 				<meta name='description' content='Creative coding projects by Rustam Apay' />
+				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>
-					<Logo />
-					<div>
-						<div>Apay</div>
-						<div>Rus</div>
-					</div>
-					<DomainLogo />
-				</h1>
+				<Logo />
+				<h1 className={styles.title}>ApayRus.CC</h1>
 				<div className={styles.description}>
 					<p>Creative coding</p>
 					<p>Content creating</p>

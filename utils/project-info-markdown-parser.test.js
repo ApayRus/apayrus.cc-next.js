@@ -2,7 +2,7 @@
  * please look at test for understand structure of project md file.
  */
 
-import { parseMarkdownProjectInfo } from './project-markdown-parser.js'
+import { parseProjectInfoMarkdown } from './project-info-markdown-parser.js'
 
 const input = `# Визуальный генератор и мутатор пароля
  
@@ -155,5 +155,5 @@ parseLinksOrImages(`![generator](https://apayrus.github.io/crypto-funny/images/c
 // console.log(parseMarkdownProjectInfo(input))
 
 test('parseMarkdownProjectInfo', () => {
-	expect(parseMarkdownProjectInfo(input)).toEqual(output)
+	expect(parseProjectInfoMarkdown(input)).toEqual(output)
 })

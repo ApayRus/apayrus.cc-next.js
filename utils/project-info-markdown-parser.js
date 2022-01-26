@@ -56,7 +56,7 @@ const parseLinksOrImages = markdownText => {
 		.filter(elem => elem.text.trim())
 }
 
-export const parseMarkdownProjectInfo = markdownText => {
+export const parseProjectInfoMarkdown = markdownText => {
 	const h2template = new RegExp(/^\s*#{2}\s+(.+?)\s*$/, 'gm')
 
 	const splitedByHeaders = splitMarkdownIntoPartsByTemplate(

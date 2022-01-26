@@ -1,18 +1,23 @@
 import Head from 'next/head'
 import Logo from '../components/Logo'
 import styles from '../styles/Home.module.css'
+// import fs from 'fs'
 
-export default function Home() {
+export default function Home(props) {
 	return (
 		<div className={styles.container}>
 			<Head>
 				<title>ApayRus.CC - creative coding</title>
-				<meta name='description' content='Creative coding projects by Rustam Apay' />
+				<meta
+					name='description'
+					content='Creative coding projects by Rustam Apay'
+				/>
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
 			<main className={styles.main}>
+				<div>{props.projects}</div>
 				<Logo />
 				<h1 className={styles.title}>ApayRus.CC</h1>
 				<div className={styles.description}>
@@ -47,3 +52,14 @@ export default function Home() {
 		</div>
 	)
 }
+
+/* 
+export async function getStaticProps() {
+	const projects = fs.readdir('/content/ru/projects')
+	return {
+		props: {
+			projects
+		}
+	}
+} 
+*/

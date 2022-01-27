@@ -5,7 +5,7 @@ const Title = props => {
 			<h1>{title}</h1>
 			<ul>
 				{tags.map(tag => (
-					<li>{tag}</li>
+					<li key={tag}>{tag}</li>
 				))}
 			</ul>
 		</div>

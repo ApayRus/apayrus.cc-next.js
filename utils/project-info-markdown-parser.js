@@ -3,9 +3,10 @@
  */
 
 import { marked } from 'marked'
+import matchAll from 'string.prototype.matchall'
 
 const splitMarkdownIntoPartsByTemplate = (text, template) => {
-	const matches = [...text.matchAll(template)]
+	const matches = [...matchAll(text, template)]
 	if (!matches) return [{ content: text }]
 
 	const splitedParts = matches.map((elem, index, array) => {

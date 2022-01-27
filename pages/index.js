@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import fs from 'fs'
 import path from 'path'
 import { parseProjectInfoMarkdown } from '../utils/project-info-markdown-parser'
+import LangSwitcher from '../components/LangSwitcher'
 
 export default function Home (props) {
 	return (
@@ -23,6 +24,7 @@ export default function Home (props) {
 
 			<main className={styles.main}>
 				<Logo />
+				<LangSwitcher />
 				<h1 className={styles.title}>ApayRus.CC</h1>
 				<div className={styles.description}>
 					<p>Creative Coding</p>
@@ -59,14 +61,20 @@ export default function Home (props) {
 	)
 }
 
-export async function getStaticProps () {
-	const projectDirectory = path.join(process.cwd(), 'content/ru/projects')
+export async function getStaticProps (context) {
+	const { locale } = context
+	const projectDirectory = path.join(
+		process.cwd(),
+		`content/${locale}/projects`
+	)
 	const projectFileNames = fs.readdirSync(projectDirectory)
-
 	const projects = projectFileNames.map(fileName => {
 		const filePath = path.join(projectDirectory, fileName)
 		const fileContent = fs.readFileSync(filePath, 'utf8')
-		return parseProjectInfoMarkdown(fileContent)
+		return {
+			...parseProjectInfoMarkdown(fileContent),
+			href: `projects/${fileName}`.replace(/\.md$/, '')
+		}
 	})
 
 	return {

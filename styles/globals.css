@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+ 
+pre {
+  white-space: break-spaces;
+  text-align: left;
+  font-size: 10px; 
+}

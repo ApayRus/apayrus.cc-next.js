@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Logo from '../components/Logo'
 import styles from '../styles/Home.module.css'
-// import fs from 'fs'
+import fs from 'fs'
+import path from 'path'
+import { parseProjectInfoMarkdown } from '../utils/project-info-markdown-parser'
 
-export default function Home(props) {
+export default function Home (props) {
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -12,17 +14,21 @@ export default function Home(props) {
 					name='description'
 					content='Creative coding projects by Rustam Apay'
 				/>
-				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1.0'
+				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
 			<main className={styles.main}>
-				<div>{props.projects}</div>
 				<Logo />
 				<h1 className={styles.title}>ApayRus.CC</h1>
 				<div className={styles.description}>
 					<p>Creative Coding</p>
 					<p>Content Creating</p>
+
+					<pre>{JSON.stringify(props.projects, null, 2)}</pre>
 				</div>
 
 				<div className={styles.about}>
@@ -53,13 +59,19 @@ export default function Home(props) {
 	)
 }
 
-/* 
-export async function getStaticProps() {
-	const projects = fs.readdir('/content/ru/projects')
+export async function getStaticProps () {
+	const projectDirectory = path.join(process.cwd(), 'content/ru/projects')
+	const projectFileNames = fs.readdirSync(projectDirectory)
+
+	const projects = projectFileNames.map(fileName => {
+		const filePath = path.join(projectDirectory, fileName)
+		const fileContent = fs.readFileSync(filePath, 'utf8')
+		return parseProjectInfoMarkdown(fileContent)
+	})
+
 	return {
 		props: {
 			projects
 		}
 	}
-} 
-*/
+}

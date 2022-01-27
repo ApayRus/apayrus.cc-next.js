@@ -1,9 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import fs from 'fs'
-import path from 'path'
-import { parseProjectInfoMarkdown } from '../utils/project-info-markdown-parser'
 import Layout from '../components/Layout'
+import { parseMarkdownFiles, readDir } from '../utils/site-data-parser'
 
 export default function Home (props) {
 	return (
@@ -42,50 +40,16 @@ export default function Home (props) {
 export async function getStaticProps (context) {
 	const { locale } = context
 
-	// TITLE
-	const headingFilePath = path.join(
-		process.cwd(),
-		`content/${locale}/info/title.md`
-	)
-	const headingFileContent = fs.readFileSync(headingFilePath, 'utf8')
-	const heading = parseProjectInfoMarkdown(headingFileContent)
-
-	// PROJECTS
-	const projectDirectory = path.join(
-		process.cwd(),
-		`content/${locale}/projects`
-	)
-	const projectFileNames = fs.readdirSync(projectDirectory)
-
-	const projects = projectFileNames.map(fileName => {
-		const filePath = path.join(projectDirectory, fileName)
-		const fileContent = fs.readFileSync(filePath, 'utf8')
-		return {
-			...parseProjectInfoMarkdown(fileContent),
-			href: `projects/${fileName}`.replace(/\.md$/, '')
-		}
-	})
-
-	// ABOUT
-	const aboutFilePath = path.join(
-		process.cwd(),
-		`content/${locale}/info/about.md`
-	)
-	const aboutFileContent = fs.readFileSync(aboutFilePath, 'utf8')
-	const about = parseProjectInfoMarkdown(aboutFileContent)
-
-	// SOCIAL MEDIA
-	const socialMediaFilePath = path.join(
-		process.cwd(),
+	const [heading] = parseMarkdownFiles([`content/${locale}/info/title.md`])
+	const projects = parseMarkdownFiles(readDir(`content/${locale}/projects`))
+	const [about] = parseMarkdownFiles([`content/${locale}/info/about.md`])
+	const [socialMedia] = parseMarkdownFiles([
 		`content/${locale}/info/social-media.md`
-	)
-	const socialMediaFileContent = fs.readFileSync(socialMediaFilePath, 'utf8')
-	const socialMedia = parseProjectInfoMarkdown(socialMediaFileContent)
+	])
 
 	return {
 		props: {
 			layoutProps: { heading, socialMedia },
-
 			projects,
 			about
 		}

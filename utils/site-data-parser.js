@@ -13,8 +13,10 @@ export const parseMarkdownFiles = fileShortPathArray => {
 	})
 }
 
-export const readDir = shortPath => {
+export const readDir = (shortPath, mode = 'withPath') => {
 	const fullPath = path.join(process.cwd(), shortPath)
 	const fileNames = fs.readdirSync(fullPath)
-	return fileNames.map(fileName => `${shortPath}/${fileName}`)
+	return mode === 'onlyNames'
+		? fileNames
+		: fileNames.map(fileName => `${shortPath}/${fileName}`)
 }

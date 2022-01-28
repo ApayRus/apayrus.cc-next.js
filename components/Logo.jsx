@@ -1,15 +1,20 @@
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 const Logo = () => {
 	return (
-		<div className={styles.logo}>
-			<div style={{ marginBottom: -33 }}>A</div>
-			{/* <div>pa</div> */}
-			<div style={{ /* color: 'grey',  */ transform: 'rotateX(180deg)' }}>
-				Y
-			</div>
-		</div>
+		<Link href='/'>
+			<img style={styles.logo} src='/logo.png' alt='apayrus.cc logo' />
+		</Link>
 	)
+}
+
+const styles = {
+	logo: {
+		// height: '100px',
+		width: '100%',
+		maxWidth: '70px',
+		cursor: 'pointer'
+	}
 }
 
 export default Logo

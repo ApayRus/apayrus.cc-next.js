@@ -2,38 +2,32 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 import { parseMarkdownFiles, readDir } from '../utils/site-data-parser'
+import About from '../components/About'
+import ProjectCard from '../components/ProjectCard'
 
 export default function Home (props) {
+	const { projects, layoutProps, about } = props
 	return (
-		<Layout layoutProps={props.layoutProps}>
-			<div className={styles.container}>
-				<Head>
-					<title>ApayRus.CC - creative coding</title>
-					<meta
-						name='description'
-						content='Creative coding projects by Rustam Apay'
-					/>
-					<meta
-						name='viewport'
-						content='width=device-width, initial-scale=1.0'
-					/>
-					<link rel='icon' href='/favicon.ico' />
-				</Head>
-
+		<>
+			<Head>
+				<title>ApayRus.CC - creative coding</title>
+				<meta
+					name='description'
+					content='Creative coding projects by Rustam Apay'
+				/>
+				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+			<Layout layoutProps={layoutProps}>
 				<main className={styles.main}>
-					<h1
-						dangerouslySetInnerHTML={{ __html: props.about.title }}
-					/>
-					<div
-						className={styles.about}
-						dangerouslySetInnerHTML={{
-							__html: props.about.description
-						}}
-					></div>
-					<pre>{JSON.stringify(props.projects, null, 2)}</pre>
+					<About {...about} />
+					{projects.map(project => (
+						<ProjectCard key={project.filePath} {...project} />
+					))}
+					{/* <pre>{JSON.stringify(projects, null, 2)}</pre> */}
 				</main>
-			</div>
-		</Layout>
+			</Layout>
+		</>
 	)
 }
 

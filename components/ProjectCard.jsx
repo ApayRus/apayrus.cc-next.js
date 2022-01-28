@@ -56,16 +56,17 @@ const ProjectCard = props => {
 }
 
 const styles = {
-	root: { display: 'flex' },
+	root: { display: 'flex', flexWrap: 'wrap' },
 	image: { flex: 1 },
 	description: { flex: 1 },
 	types: { flex: 1 },
-	tags: { display: 'flex' },
+	tags: { display: 'flex', flexWrap: 'wrap' },
 	tag: {
 		padding: '2px',
 		paddingLeft: '4px',
 		paddingRight: '4px',
-		marginRight: '2px',
+		marginRight: '4px',
+		marginTop: '4px',
 		borderRadius: '5px',
 		border: '1px solid gray',
 		color: 'gray',

@@ -12,4 +12,10 @@ const Title = props => {
 	)
 }
 
+// const styles = {
+// 	root: {
+// 		display: 'flex'
+// 	}
+// }
+
 export default Title

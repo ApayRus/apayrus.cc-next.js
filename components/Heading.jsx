@@ -39,7 +39,7 @@ const styles = {
 		marginLeft: '10px'
 	},
 	title: { margin: 0, color: theme.color1 },
-	logo: { width: '35%', maxWidth: '70px' },
+	logo: { width: '35%', maxWidth: '70px', cursor: 'pointer' },
 	langSwitcher: {
 		position: 'absolute',
 		top: 10,

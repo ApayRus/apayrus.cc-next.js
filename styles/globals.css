@@ -3,11 +3,19 @@
 	src: url(/fonts/Comfortaa-Regular.ttf);
 }
 
-html,
+:root {
+	--color1: #0047ab;
+	/* 	--sm: 600px;
+	--md: 768px;
+	--lg: 992px;
+	--xl: 1200px; */
+}
+
 body {
-	padding: 0;
-	margin: 0;
+	padding: 5px;
+	margin: auto;
 	font-family: Comfortaa;
+	max-width: 1024px;
 }
 
 a {
@@ -24,6 +32,10 @@ h2,
 h3,
 h4 {
 	font-family: Comfortaa;
+}
+
+h2 {
+	color: var(--color1);
 }
 
 pre {

@@ -1,0 +1,14 @@
+.langSwitcherContainer {
+}
+
+.locale {
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 15px;
+	font-size: 1rem;
+}
+
+.activeLocale {
+	background-color: var(--color1);
+	color: white;
+}

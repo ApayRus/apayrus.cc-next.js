@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import theme from '../styles/theme'
-
+import styles from './LangSwitcher.module.css'
 const LangSwitcher = () => {
 	const router = useRouter()
 	const {
@@ -17,14 +16,14 @@ const LangSwitcher = () => {
 
 	const path = slug || pathname // slug only on dynamic routing like: pages/projects/[slug].jsx
 	return (
-		<div style={styles.langSwitcherContainer}>
+		<div className={styles.langSwitcherContainer}>
 			{locales.map(locale => {
 				return (
 					<Link key={locale} href={path} locale={locale}>
 						<div
-							style={
+							className={
 								isActiveLocale(locale)
-									? { ...styles.locale, ...styles.activeLocale }
+									? `${styles.locale} ${styles.activeLocale}`
 									: styles.locale
 							}
 						>
@@ -35,22 +34,6 @@ const LangSwitcher = () => {
 			})}
 		</div>
 	)
-}
-
-const styles = {
-	langSwitcherContainer: {
-		// border: '1px solid red'
-	},
-	locale: {
-		padding: '2px',
-		cursor: 'pointer',
-		borderRadius: '8px',
-		fontSize: '0.7rem'
-	},
-	activeLocale: {
-		backgroundColor: theme.color1,
-		color: 'white'
-	}
 }
 
 export default LangSwitcher

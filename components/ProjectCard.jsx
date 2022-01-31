@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import ContentTypesTable from './ProjectContentTypesTable'
+import ProjectContent from './ProjectContent'
 import styles from './ProjectCard.module.css'
 
 const ProjectCard = props => {
@@ -8,6 +10,11 @@ const ProjectCard = props => {
 		categories,
 		filePath,
 		tags,
+		pageMode = false, // cardMode
+		/*
+		cardMode: h2, read more button 
+		pageMode: h1, full content
+		*/
 		...contentTypes
 	} = props
 
@@ -21,27 +28,23 @@ const ProjectCard = props => {
 
 	const [image] = images
 
-	const ContentTypes = props => {
-		const { types } = props
-		return (
-			<div className={styles.types}>
-				{Object.keys(types).map(type => {
-					const { length: count } = contentTypes[type]
-
-					return (
-						<div key={type} className={styles.typeContainer}>
-							<div className={styles.type}>{type}</div>
-							<div className={styles.count}>{count}</div>
-						</div>
-					)
-				})}
-			</div>
-		)
-	}
+	const titleComponent = pageMode ? (
+		<Link href={`/${projectPath}`}>
+			<a>
+				<h1 className={styles.title}>{title}</h1>
+			</a>
+		</Link>
+	) : (
+		<Link href={`/${projectPath}`}>
+			<a>
+				<h2 className={styles.title}>{title}</h2>
+			</a>
+		</Link>
+	)
 
 	return (
 		<section className={styles.root}>
-			<h2 className={styles.title}>{title}</h2>
+			{titleComponent}
 			<div className={styles.tags}>
 				{tags.map(tag => (
 					<div key={tag} className={styles.tag}>
@@ -53,15 +56,17 @@ const ProjectCard = props => {
 				<div className={styles.imageContainer}>
 					<img src={image.href} alt={image.text} className={styles.image} />
 				</div>
-				<ContentTypes types={contentTypes} />
+				<ContentTypesTable types={contentTypes} />
 				<div className={styles.description}>
 					<div dangerouslySetInnerHTML={{ __html: description }} />
-
+				</div>
+				{!pageMode && (
 					<div className={styles.readMore}>
 						<Link href={`/${projectPath}`}>Read more</Link>
 					</div>
-				</div>
+				)}
 			</div>
+			{pageMode && <ProjectContent types={contentTypes} />}
 		</section>
 	)
 }

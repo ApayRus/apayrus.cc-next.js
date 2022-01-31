@@ -1,12 +1,13 @@
 import Layout from '../../components/Layout'
+import ProjectCard from '../../components/ProjectCard'
 import { parseMarkdownFiles, readDir } from '../../utils/site-data-parser'
 
 const ProjectPage = props => {
 	const { layoutProps, project } = props
 	return (
 		<Layout layoutProps={layoutProps}>
-			<div>this is project page!!!</div>
-			<pre>{JSON.stringify(project, null, 2)}</pre>
+			<ProjectCard key={project.filePath} {...project} pageMode />
+			{/* <pre>{JSON.stringify(project, null, 2)}</pre> */}
 		</Layout>
 	)
 }

@@ -1,7 +1,6 @@
 .root {
-	overflow: auto;
+	flex: 1;
 }
-
 .image {
 	width: 100%;
 	max-width: 360px;
@@ -18,32 +17,13 @@
 
 .content {
 	margin-top: 15px;
+	overflow: auto;
 }
 
 .description {
 	/* text-align: justify; */
 }
-.types {
-	float: right;
-	border: 1px solid gray;
-	margin-left: 10px;
-	padding: 10px;
-	font-size: 0.7rem;
-	color: grey;
-}
-.typeContainer {
-	display: flex;
-}
-.type {
-	/*  border: 1px solid red,  */
-	flex: 10;
-	padding-right: 5px;
-}
-.count {
-	/* border: 1px solid green, */
-	flex: 1;
-}
-/* tags{ display: flex', flexWrap: 'wrap }, */
+
 .tag {
 	display: inline-block;
 	padding: 2px;
@@ -58,14 +38,12 @@
 }
 
 .readMore {
-	color: var(--color1);
-	border-radius: 5px;
 	display: inline-block;
 	margin-top: 1em;
 }
 
 .readMore :hover {
-	opacity: 1;
+	text-decoration: underline;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -73,10 +51,6 @@
 	.imageContainer {
 		text-align: center;
 		width: 100%;
-	}
-
-	.types {
-		margin-top: 1rem;
 	}
 }
 

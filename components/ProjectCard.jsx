@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ContentTypesTable from './ProjectContentTypesTable'
 import ProjectContent from './ProjectContent'
 import styles from './ProjectCard.module.css'
+import img from 'next/image'
 
 const ProjectCard = props => {
 	const {

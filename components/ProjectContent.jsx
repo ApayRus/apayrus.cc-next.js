@@ -16,7 +16,13 @@ const ProjectContent = props => {
 							{typeArray.map(elem => {
 								const { text, href, type /* image or link */ } = elem
 								return (
-									<a key={text} href={href} target='_blank' className={styles.link}>
+									<a
+										key={text}
+										href={href}
+										target='_blank'
+										rel='noreferrer'
+										className={styles.link}
+									>
 										<h3>{text}</h3>
 									</a>
 								)

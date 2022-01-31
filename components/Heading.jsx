@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import LangSwitcher from './LangSwitcher'
 import styles from './Heading.module.css'
+import img from 'next/image'
 
 const Heading = props => {
 	const { title, tags } = props

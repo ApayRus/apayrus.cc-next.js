@@ -2,4 +2,4 @@
 
 ## tags
 
-Creative Coding, Content Creating
+Creative Coding

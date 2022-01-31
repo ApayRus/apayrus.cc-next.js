@@ -1,4 +1,4 @@
-# Keyboard with voice over 
+# Keyboard with voice over
 
 ## categories
 
@@ -6,7 +6,7 @@ education
 
 ## tags
 
-HTML, CSS, JavaScript, Vue, HTML5 audio, Languages, CSS Animation
+HTML, CSS, JavaScript, Vue, HTML5 audio, Language Learning, CSS Animation
 
 ## description
 
@@ -27,3 +27,5 @@ The keyboard is displayed on the screen. When you press a key on the physical ke
 ## mindmaps
 
 ## code
+
+[github repo](https://github.com/ApayRus/keyboard-for-babies)

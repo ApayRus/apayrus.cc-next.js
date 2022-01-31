@@ -1,0 +1,39 @@
+.heading {
+	position: relative;
+}
+
+.titleLogoContainer {
+	display: flex;
+	align-items: center;
+}
+
+.titleContainer {
+	display: 'inline-block';
+	margin-left: 10px;
+}
+
+.title {
+	margin: 0;
+	color: var(--color1);
+}
+
+.logo {
+	width: 35%;
+	max-width: 70px;
+	cursor: pointer;
+}
+
+.langSwitcher {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.tags {
+	margin-left: 4px;
+	color: grey;
+}
+
+.tag {
+	display: inline-block;
+}

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 import { parseMarkdownFiles, readDir } from '../utils/site-data-parser'
 import About from '../components/About'
@@ -19,7 +18,7 @@ export default function Home (props) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Layout layoutProps={layoutProps}>
-				<main className={styles.main}>
+				<main>
 					<About {...about} />
 					{projects.map(project => (
 						<ProjectCard key={project.filePath} {...project} />

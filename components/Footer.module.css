@@ -5,6 +5,8 @@
 	/* background-color: var(--color1); */
 	color: white;
 	border-radius: 0.5em;
+	flex: 1;
+	max-height: 100px;
 }
 
 .link {

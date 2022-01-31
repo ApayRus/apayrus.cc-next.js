@@ -10,8 +10,10 @@ const Layout = props => {
 	return (
 		<>
 			<Heading {...heading} />
-			{children}
-			<Footer socialMedia={socialMedia} />
+			<div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
+				{children}
+				<Footer socialMedia={socialMedia} />
+			</div>
 		</>
 	)
 }

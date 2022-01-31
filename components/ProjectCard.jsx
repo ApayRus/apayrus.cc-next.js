@@ -1,9 +1,9 @@
 import Link from 'next/link'
+import styles from './ProjectCard.module.css'
 
 const ProjectCard = props => {
 	const {
 		title,
-		images,
 		description,
 		categories,
 		filePath,
@@ -17,72 +17,53 @@ const ProjectCard = props => {
 		.join('/')
 		.replace(/.md$/, '') //route
 
-	console.log('projectPath')
-	console.log(projectPath)
+	const { images } = contentTypes
 
 	const [image] = images
+
+	const ContentTypes = props => {
+		const { types } = props
+		return (
+			<div className={styles.types}>
+				{Object.keys(types).map(type => {
+					const { length: count } = contentTypes[type]
+
+					return (
+						<div key={type} className={styles.typeContainer}>
+							<div className={styles.type}>{type}</div>
+							<div className={styles.count}>{count}</div>
+						</div>
+					)
+				})}
+			</div>
+		)
+	}
+
 	return (
-		<section>
-			<h2>{title}</h2>
-			<div style={styles.tags}>
+		<section className={styles.root}>
+			<h2 className={styles.title}>{title}</h2>
+			<div className={styles.tags}>
 				{tags.map(tag => (
-					<div key={tag} style={styles.tag}>
+					<div key={tag} className={styles.tag}>
 						{tag}
 					</div>
 				))}
 			</div>
-			<div style={styles.root}>
-				<div style={styles.image}>
-					<img src={image.href} alt={image.text} style={{ width: '100%' }} />
+			<div className={styles.content}>
+				<div className={styles.imageContainer}>
+					<img src={image.href} alt={image.text} className={styles.image} />
 				</div>
-				<div style={styles.description}>
+				<ContentTypes types={contentTypes} />
+				<div className={styles.description}>
 					<div dangerouslySetInnerHTML={{ __html: description }} />
-					<div style={styles.readMore}>
+
+					<div className={styles.readMore}>
 						<Link href={`/${projectPath}`}>Read more</Link>
 					</div>
-				</div>
-				<div style={styles.types}>
-					{Object.keys(contentTypes).map(type => {
-						return (
-							<div key={type}>
-								{type} ({contentTypes[type].length})
-							</div>
-						)
-					})}
 				</div>
 			</div>
 		</section>
 	)
-}
-
-const styles = {
-	root: { display: 'flex', flexWrap: 'wrap' },
-	image: { flex: 1 },
-	description: { flex: 1 },
-	types: { flex: 1 },
-	tags: { display: 'flex', flexWrap: 'wrap' },
-	tag: {
-		padding: '2px',
-		paddingLeft: '4px',
-		paddingRight: '4px',
-		marginRight: '4px',
-		marginTop: '4px',
-		borderRadius: '5px',
-		border: '1px solid gray',
-		color: 'gray',
-		fontSize: '80%'
-	},
-	readMore: {
-		padding: '4px 8px',
-		color: 'white',
-		backgroundColor: 'skyblue',
-		borderRadius: '5px',
-		display: 'inline-block',
-		'&:hover': {
-			backgroundColor: 'blue',
-			cursor: 'pointer'
-		}
-	}
 }
 
 export default ProjectCard

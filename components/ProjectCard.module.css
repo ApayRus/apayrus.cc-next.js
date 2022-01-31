@@ -1,0 +1,100 @@
+.root {
+	overflow: auto;
+}
+
+.image {
+	width: 100%;
+	max-width: 360px;
+}
+
+.title {
+	margin-bottom: 5px;
+}
+
+.title,
+.tags {
+	text-align: center;
+}
+
+.content {
+	margin-top: 15px;
+}
+
+.description {
+	/* text-align: justify; */
+}
+.types {
+	float: right;
+	border: 1px solid gray;
+	margin-left: 10px;
+	padding: 10px;
+	font-size: 0.7rem;
+	color: grey;
+}
+.typeContainer {
+	display: flex;
+}
+.type {
+	/*  border: 1px solid red,  */
+	flex: 10;
+	padding-right: 5px;
+}
+.count {
+	/* border: 1px solid green, */
+	flex: 1;
+}
+/* tags{ display: flex', flexWrap: 'wrap }, */
+.tag {
+	display: inline-block;
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	color: gray;
+	font-size: 60%;
+}
+
+.readMore {
+	color: var(--color1);
+	border-radius: 5px;
+	display: inline-block;
+	margin-top: 1em;
+}
+
+.readMore :hover {
+	opacity: 1;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.imageContainer {
+		text-align: center;
+		width: 100%;
+	}
+
+	.types {
+		margin-top: 1rem;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.imageContainer {
+		float: left;
+		padding: 1em;
+		width: 33%;
+		max-width: 360px;
+	}
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: val(--md)) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: val(--lg)) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: val(--xl)) {
+}

@@ -8,9 +8,9 @@ const ProjectCard = props => {
 	const {
 		title,
 		description,
-		categories,
-		filePath,
-		tags,
+		categories = [],
+		filePath = '',
+		tags = [],
 		pageMode = false, // cardMode
 		/*
 		cardMode: h2, read more button 
@@ -25,7 +25,7 @@ const ProjectCard = props => {
 		.join('/')
 		.replace(/.md$/, '') //route
 
-	const { images } = contentTypes
+	const { images = [] } = contentTypes
 
 	const [image] = images
 
@@ -55,7 +55,7 @@ const ProjectCard = props => {
 			</div>
 			<div className={styles.content}>
 				<div className={styles.imageContainer}>
-					<img src={image.href} alt={image.text} className={styles.image} />
+					<img src={image?.href} alt={image?.text} className={styles.image} />
 				</div>
 				<ContentTypesTable types={contentTypes} />
 				<div className={styles.description}>

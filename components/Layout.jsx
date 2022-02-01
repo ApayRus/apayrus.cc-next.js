@@ -2,12 +2,9 @@ import Heading from '../components/Heading'
 import Footer from '../components/Footer'
 
 const Layout = props => {
-	const { children, layoutProps } = props
+	const { children, layoutProps = {} } = props
 
 	const { heading = {}, footer = {} } = layoutProps
-
-	console.log('layoutProps')
-	console.log(layoutProps)
 
 	return (
 		<>

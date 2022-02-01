@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import LangSwitcher from './LangSwitcher'
 import styles from './Heading.module.css'
-import img from 'next/image'
 
 const Heading = props => {
-	const { title, tags } = props
+	const { title = '', tags = [] } = props
 	return (
 		<header className={styles.heading}>
 			<div className={styles.titleLogoContainer}>
-				<Link href='/'>
+				<Link href='/' passHref>
 					<img className={styles.logo} src='/logo.png' alt='apayrus.cc logo' />
 				</Link>
 				<div className={styles.titleContainer}>

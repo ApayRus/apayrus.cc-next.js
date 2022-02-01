@@ -1,8 +1,8 @@
 import styles from './Footer.module.css'
 
 const Footer = props => {
-	const { socialMedia } = props
-	const { links } = socialMedia
+	const { socialMedia = {} } = props
+	const { links = [] } = socialMedia
 
 	return (
 		<footer className={styles.root}>

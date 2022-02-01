@@ -1,0 +1,21 @@
+.root {
+	display: flex;
+	overflow: auto;
+}
+
+.box {
+	display: flex;
+	align-items: center;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+.imageContainer {
+}
+
+.image {
+	border: 2px solid silver;
+	padding: 0.25em;
+	margin: 0.25em;
+	width: 100%;
+}

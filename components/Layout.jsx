@@ -2,17 +2,19 @@ import Heading from '../components/Heading'
 import Footer from '../components/Footer'
 
 const Layout = props => {
-	const {
-		children,
-		layoutProps: { heading, socialMedia }
-	} = props
+	const { children, layoutProps } = props
+
+	const { heading = {}, footer = {} } = layoutProps
+
+	console.log('layoutProps')
+	console.log(layoutProps)
 
 	return (
 		<>
 			<Heading {...heading} />
 			<div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
 				{children}
-				<Footer socialMedia={socialMedia} />
+				<Footer {...footer} />
 			</div>
 		</>
 	)

@@ -1,12 +1,16 @@
 import Layout from '../../components/Layout'
 import ProjectCard from '../../components/ProjectCard'
-import { parseMarkdownFiles, readDir } from '../../utils/site-data-parser'
+import {
+	getLayoutProps,
+	parseMarkdownFiles,
+	readDir
+} from '../../utils/site-data-parser'
 
 const ProjectPage = props => {
 	const { layoutProps, project } = props
 	return (
 		<Layout layoutProps={layoutProps}>
-			<ProjectCard key={project.filePath} {...project} pageMode />
+			<ProjectCard {...project} pageMode />
 			{/* <pre>{JSON.stringify(project, null, 2)}</pre> */}
 		</Layout>
 	)
@@ -38,17 +42,14 @@ export const getStaticProps = context => {
 	} = context
 
 	// for Layout:
-	const [heading] = parseMarkdownFiles([`content/${locale}/info/title.md`])
-	const [socialMedia] = parseMarkdownFiles([
-		`content/${locale}/info/social-media.md`
-	])
+	const layoutProps = getLayoutProps(locale)
 
 	// for this page
 	const [project] = parseMarkdownFiles([`content/${locale}/projects/${slug}.md`])
 
 	return {
 		props: {
-			layoutProps: { heading, socialMedia },
+			layoutProps,
 			project
 		}
 	}

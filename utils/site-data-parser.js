@@ -20,3 +20,13 @@ export const readDir = (shortPath, mode = 'withPath') => {
 		? fileNames
 		: fileNames.map(fileName => `${shortPath}/${fileName}`)
 }
+
+export const getLayoutProps = locale => {
+	const [heading] = parseMarkdownFiles([`content/${locale}/info/title.md`])
+	const [socialMedia] = parseMarkdownFiles([
+		`content/${locale}/info/social-media.md`
+	])
+	const footer = { socialMedia }
+
+	return { heading, footer }
+}

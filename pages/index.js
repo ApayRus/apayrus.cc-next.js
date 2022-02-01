@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
-import { parseMarkdownFiles, readDir } from '../utils/site-data-parser'
+import {
+	getLayoutProps,
+	parseMarkdownFiles,
+	readDir
+} from '../utils/site-data-parser'
 import About from '../components/About'
 import ProjectCard from '../components/ProjectCard'
 
@@ -33,16 +37,16 @@ export default function Home (props) {
 export async function getStaticProps (context) {
 	const { locale } = context
 
-	const [heading] = parseMarkdownFiles([`content/${locale}/info/title.md`])
+	//for Layout
+	const layoutProps = getLayoutProps(locale)
+
+	//for this page
 	const projects = parseMarkdownFiles(readDir(`content/${locale}/projects`))
 	const [about] = parseMarkdownFiles([`content/${locale}/info/about.md`])
-	const [socialMedia] = parseMarkdownFiles([
-		`content/${locale}/info/social-media.md`
-	])
 
 	return {
 		props: {
-			layoutProps: { heading, socialMedia },
+			layoutProps,
 			projects,
 			about
 		}

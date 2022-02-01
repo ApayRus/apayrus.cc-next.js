@@ -24,6 +24,36 @@ The procedure for creating an application is explained step by step in the video
 
 ![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
 
+![generator](https://apayrus.github.io/crypto-funny/images/crypto-funny.gif)
+
+![mutator](https://i.imgur.com/zoyU8DN.gif)
+
+![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
+
+![generator](https://apayrus.github.io/crypto-funny/images/crypto-funny.gif)
+
+![mutator](https://i.imgur.com/zoyU8DN.gif)
+
+![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
+
+![generator](https://apayrus.github.io/crypto-funny/images/crypto-funny.gif)
+
+![mutator](https://i.imgur.com/zoyU8DN.gif)
+
+![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
+
+![generator](https://apayrus.github.io/crypto-funny/images/crypto-funny.gif)
+
+![mutator](https://i.imgur.com/zoyU8DN.gif)
+
+![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
+
+![generator](https://apayrus.github.io/crypto-funny/images/crypto-funny.gif)
+
+![mutator](https://i.imgur.com/zoyU8DN.gif)
+
+![youtube intro cover](https://i.imgur.com/CxT9dGj.png)
+
 ## videos
 
 [Description of app functionality and course content](https://youtu.be/IaQo74siH40)

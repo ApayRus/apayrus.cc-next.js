@@ -1,5 +1,5 @@
-import Heading from '../components/Heading'
-import Footer from '../components/Footer'
+import Heading from './Heading'
+import Footer from './Footer'
 
 const Layout = props => {
 	const { children, layoutProps = {} } = props

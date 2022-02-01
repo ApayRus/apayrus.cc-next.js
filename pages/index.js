@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import {
 	getLayoutProps,
 	parseMarkdownFiles,
 	readDir
 } from '../utils/site-data-parser'
 import About from '../components/About'
-import ProjectCard from '../components/ProjectCard'
+import ProjectCard from '../components/project/ProjectCard'
 
 export default function Home (props) {
 	const { projects, layoutProps, about } = props

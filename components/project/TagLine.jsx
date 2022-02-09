@@ -1,7 +1,7 @@
 import styles from './Tagline.module.css'
 
 const TagLine = props => {
-	const { stackTags, topicTags } = props
+	const { stackTags = [], topicTags = [] } = props
 	return (
 		<div className={styles.tagline}>
 			<div className={styles.stackTags}>

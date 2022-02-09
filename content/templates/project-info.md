@@ -2,7 +2,9 @@
 
 ## categories
 
-## tags
+## stack
+
+## topics
 
 ## description
 

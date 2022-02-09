@@ -2,7 +2,7 @@ import Link from 'next/link'
 import ContentTypesTable from './ProjectContentTypesTable'
 import ProjectContent from './ProjectContent'
 import styles from './ProjectCard.module.css'
-import img from 'next/image'
+import TagLine from './Tagline'
 
 const ProjectCard = props => {
 	const {
@@ -10,7 +10,9 @@ const ProjectCard = props => {
 		description,
 		categories = [],
 		filePath = '',
-		tags = [],
+		// tags = [],
+		stack: stackTags = [],
+		topics: topicTags = [],
 		pageMode = false, // cardMode
 		/*
 		cardMode: h2, read more button 
@@ -46,13 +48,7 @@ const ProjectCard = props => {
 	return (
 		<section className={styles.root}>
 			{titleComponent}
-			<div className={styles.tags}>
-				{tags.map(tag => (
-					<div key={tag} className={styles.tag}>
-						{tag}
-					</div>
-				))}
-			</div>
+			<TagLine {...{ stackTags, topicTags }} />
 			<div className={styles.content}>
 				<div className={styles.imageContainer}>
 					<img src={image?.href} alt={image?.text} className={styles.image} />

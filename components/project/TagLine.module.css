@@ -1,0 +1,30 @@
+.tags {
+	text-align: center;
+}
+.tag {
+	display: inline-block;
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	color: gray;
+	font-size: 60%;
+}
+
+.stackTags,
+.topicTags {
+	display: inline-block;
+}
+
+.topicTags .tag {
+	color: goldenrod;
+	border-color: goldenrod;
+}
+
+.tagline {
+	text-align: center;
+	display: block;
+}

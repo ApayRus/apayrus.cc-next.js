@@ -8,13 +8,10 @@
 
 .title {
 	margin-bottom: 5px;
-}
-
-.title,
-.tags {
 	text-align: center;
 }
 
+.title,
 .content {
 	margin-top: 15px;
 	overflow: auto;
@@ -22,19 +19,6 @@
 
 .description {
 	/* text-align: justify; */
-}
-
-.tag {
-	display: inline-block;
-	padding: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
-	margin-right: 4px;
-	margin-top: 4px;
-	border-radius: 5px;
-	border: 1px solid gray;
-	color: gray;
-	font-size: 60%;
 }
 
 .readMore {

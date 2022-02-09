@@ -2,7 +2,7 @@ import Link from 'next/link'
 import ContentTypesTable from './ProjectContentTypesTable'
 import ProjectContent from './ProjectContent'
 import styles from './ProjectCard.module.css'
-import TagLine from './Tagline'
+import TagLine from './TagLine'
 
 const ProjectCard = props => {
 	const {

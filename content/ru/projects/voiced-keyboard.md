@@ -4,9 +4,13 @@
 
 education
 
-## tags
+## stack
 
-HTML, CSS, JavaScript, Vue, HTML5 audio, Languages, CSS Animation
+HTML, CSS, JavaScript, Vue
+
+## topics
+
+Playing audio, Languages, CSS Animation, Keyboard events
 
 ## description
 

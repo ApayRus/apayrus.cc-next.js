@@ -4,9 +4,13 @@
 
 education
 
-## tags
+## stack
 
-HTML, CSS, JavaScript, Vue, Visualization, Random values
+HTML, CSS, JavaScript, Vue
+
+## topics
+
+Visualization, Random values
 
 ## description
 

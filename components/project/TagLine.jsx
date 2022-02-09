@@ -1,4 +1,4 @@
-import styles from './Tagline.module.css'
+import styles from './TagLine.module.css'
 
 const TagLine = props => {
 	const { stackTags = [], topicTags = [] } = props
